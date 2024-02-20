@@ -1,0 +1,97 @@
+{
+    "_type": "https://in-toto.io/Statement/v1",
+    "subject": [
+        {
+            "name": "github.com/fazledyn-or/flask-webgoat",
+            "version": "v1.0.0",
+            "digest": {
+                "sha1": null
+            }
+        }
+    ],
+    "predicateType": "https://in-toto.io/attestation/sarif/v0.1",
+    "predicate": [
+        {
+            "fixerCustomHeading": "Prevent SQL Injection",
+            "isWarning": "True",
+            "functionName": null,
+            "projectPath": "/workspace/source/",
+            "filePath": "/workspace/source/flask_webgoat/__init__.py",
+            "fixerCategoryTag": "PyFT-1",
+            "className": null,
+            "priority": "H",
+            "scanDate": "Tue Feb 20 05:31:31 UTC 2024",
+            "fixerCustomMessageText": "In file: <original_filename>, there is a method null that is vulnerable to CWE-89. According to SQL injection, without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL. iCR identified the SQL injection sink where data has flowed without being validated properly.",
+            "fixerCategory": "Injection",
+            "selectedNode": "",
+            "fixNo": "In-H-1",
+            "relatedSourceLocations": [
+                "/workspace/source/flask_webgoat/auth.py"
+            ],
+            "fixerCustomMessage": "In file: <original_filename>, there is a method <span class='function_name'>null</span> that is vulnerable to <a href='https://cwe.mitre.org/data/definitions/89.html' target='_blank'>CWE-89</a>. According to <a href='https://en.wikipedia.org/wiki/SQL_injection' target='_blank'>SQL injection</a>, without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL. iCR identified the SQL injection sink where data has flowed without being validated properly.",
+            "diffLocations": [
+                "__init__.py16617934338322157569.diff"
+            ]
+        },
+        {
+            "fixerCustomHeading": "Prevent Path Manipulation",
+            "isWarning": "True",
+            "functionName": null,
+            "projectPath": "/workspace/source/",
+            "filePath": "/workspace/source/flask_webgoat/actions.py",
+            "fixerCategoryTag": "PyFT-3",
+            "className": null,
+            "priority": "H",
+            "scanDate": "Tue Feb 20 05:31:31 UTC 2024",
+            "fixerCustomMessageText": "In file: <original_filename>, there is a method null that is vulnerable to path manipulation attack. By modifying file paths, an attacker can acquire sensitive information from different resources. iCR identified the location where the attacker can access unauthorized resources and suggested that proper sanitization should be done before using the path data.",
+            "fixerCategory": "Injection",
+            "selectedNode": "",
+            "fixNo": "In-H-2",
+            "relatedSourceLocations": null,
+            "fixerCustomMessage": "In file: <original_filename>, there is a method <span class='function_name'>null</span> that is vulnerable to path manipulation attack. By <a href='https://cwe.mitre.org/data/definitions/22.html' target='_blank'>modifying file paths</a>, an attacker can acquire sensitive information from different resources. iCR identified the location where the attacker can access unauthorized resources and suggested that proper sanitization should be done before using the path data.",
+            "diffLocations": [
+                "actions.py9443487620049070492.diff"
+            ]
+        },
+        {
+            "fixerCustomHeading": "Prevent OS Command Injection",
+            "isWarning": "True",
+            "functionName": null,
+            "projectPath": "/workspace/source/",
+            "filePath": "/workspace/source/flask_webgoat/actions.py",
+            "fixerCategoryTag": "PyFT-4",
+            "className": null,
+            "priority": "H",
+            "scanDate": "Tue Feb 20 05:31:31 UTC 2024",
+            "fixerCustomMessageText": "In file: <original_filename>, there is a method null that is vulnerable to attacks which can execute arbitrary operating system(OS) commands. iCR suggested proper sanitization to prevent this OS injection attack.",
+            "fixerCategory": "Injection",
+            "selectedNode": "",
+            "fixNo": "In-H-3",
+            "relatedSourceLocations": null,
+            "fixerCustomMessage": "In file: <original_filename>, there is a method <span class='function_name'>null</span> that is vulnerable to attacks which can <a href='https://cwe.mitre.org/data/definitions/78.html' target='_blank'>execute arbitrary operating system(OS) commands</a>. iCR suggested proper sanitization to prevent this OS injection attack.",
+            "diffLocations": [
+                "actions.py12186523149794570652.diff"
+            ]
+        },
+        {
+            "fixerCustomHeading": "Allow CSRF Protection",
+            "isWarning": "False",
+            "functionName": "create_app",
+            "projectPath": "/workspace/source/",
+            "filePath": "/workspace/source/flask_webgoat/__init__.py",
+            "fixerCategoryTag": "PyUSA-28",
+            "className": null,
+            "priority": "H",
+            "scanDate": "Tue Feb 20 05:31:31 UTC 2024",
+            "fixerCustomMessageText": "In file: __init__.py, there is code that disables the Cross Site Request Forgery (CSRF) protection in a Flask application. A user of this application may be tricked by an attacker to click on a link or visit a malicious website. iCR added the necessary code to ensure CSRF protection for the Flask web application.",
+            "fixerCategory": "Security Misconfiguration Issues",
+            "selectedNode": "Flask(__name__)",
+            "fixNo": "SMI-H-1",
+            "relatedSourceLocations": null,
+            "fixerCustomMessage": "In file: <span class='original_filename'>__init__.py</span>, there is code that disables the <a href='https://owasp.org/www-community/attacks/csrf' target='_blank'>Cross Site Request Forgery (CSRF)</a> protection in a Flask application. A user of this application may be tricked by an attacker to click on a link or visit a malicious website. iCR added the necessary code to ensure CSRF protection for the Flask web application.",
+            "diffLocations": [
+                "__init__.py18148267932783376019.diff"
+            ]
+        }
+    ]
+}
